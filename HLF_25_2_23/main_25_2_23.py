@@ -26,11 +26,13 @@ tablero_disparos_jugador_1= f.crear_tablero()
 
 
 ###   INSTRUCCIONES DEL JUEGO
-
 print("\t\t\t\t\t\t\t EMPIEZA EL JUEGO\n ", "~~"*70)
-print("Instrucciones: \n\n\t El juego consiste en disparar a los barcos de tu oponente y hundirlos antes de que tu oponente destruya los tuyos.")
+print("Instrucciones: \n\n\t El juego consiste en disparar a los barcos de tu oponente y hundirlos antes de que tu oponente destruya los tuyos.\n")
 
-print("\t Empieza jugando el Jugador 1, si acierta sigue disparando hasta que tenga un fallo, entonces será el turno de la máquina.")
+print("\t Empieza jugando el Jugador 1, si acierta sigue disparando hasta que tenga un fallo, entonces será el turno de la máquina.\n")
+
+print("\t\t\t\t\t\t\t¡¡¡BUENA SUERTE!!!\n")
+
 
 print(f'\n Jugador 1, este es tu mar con tus barcos:\n\n {tablero_jugador_1}\n')
 print(f'\n Y aqui esta el mar de tu adversario: \n\n {tablero_disparos_jugador_1}\n')
@@ -70,7 +72,7 @@ while marcador["jugador"] < PUNTUACION_MAXIMA and marcador["maquina"] < PUNTUACI
         disparo_maquina = (random.randint(0, 9), random.randint(0, 9))
         print('disparo maquina', disparo_maquina)
         comprobar_maquina = f.comprobar_disparo(disparo_maquina, tablero_maquina)
-        if comprobar_maquina:
+        if comprobar_maquina== True:
             tablero_disparos_maquina[disparo_maquina] = "X"
             marcador["maquina"] += 1
             print("Tocado por maquina")
@@ -79,14 +81,14 @@ while marcador["jugador"] < PUNTUACION_MAXIMA and marcador["maquina"] < PUNTUACI
         else:
             tablero_disparos_maquina[disparo_maquina] = "A"
             print("Agua maquina")
-            print('disparos maquina\n', tablero_disparos_maquina)
+            print('disparos maquina\n', tablero_disparos_maquina,"\n")
             break
 
 
 #### FINAL
-print('ha terminado el juego')
+print('\t El juego ha terminado\n')
 
 if marcador["maquina"] == 20:
-    print("Ohhhhh! Has perdido contra la máquina \n Que no te hunda la moral, vuelve a intentarlo de nuevo!")
+    print("\t Ohhhhh! Has perdido contra la máquina \n\t\tQue no te hunda la moral, vuelve a intentarlo de nuevo!")
 else:
-    print("¡¡Enhorabuena, has ganado!!")
+    print("\t¡¡ENHORABUENA, HAS GANADO!!")

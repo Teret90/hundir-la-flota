@@ -9,6 +9,7 @@ class Barco:
         self.posiciones = posiciones
         self.eslora = eslora
 
+
 def crear_tablero(tamaño=(10,10)):
     return np.full(tamaño, "_")
 
@@ -116,40 +117,9 @@ def crear_tablero_relleno():
     return tablero
 
 def pedir_coordenadas():
-    disparo_jugador_x= int(input("Por favorintroduce tu coordenada x: "))
-    disparo_jugador_y= int(input("Por favorintroduce tu coordenada y: "))
+    disparo_jugador_x= int(input("Por favorintroduce tu coordenada de fila: "))
+    disparo_jugador_y= int(input("Por favorintroduce tu coordenada de columna: "))
     return (disparo_jugador_x,disparo_jugador_y)
 
-PUNTUACION_MAXIMA = 2
-marcador = {            ###diccionario para establecer un marcador de máquina y un marcador de jugador
-    'jugador': 0,
-    'maquina': 0}
 
-#def disparar_jugador(tablero_maquina,tablero_disparos_jugador_1):
-#
-#    while marcador["jugador"] < PUNTUACION_MAXIMA:
-#            disparo_jugador = pedir_coordenadas()
-#            comprobar_jugador = comprobar_disparo(disparo_jugador, tablero_maquina)
-#            if comprobar_jugador == True:
-#                tablero_disparos_jugador_1[disparo_jugador] = "X"
-#                marcador["jugador"] += 1
-#                print("Tocado")
-#            else:
-#                tablero_disparos_jugador_1[disparo_jugador] = "A"
-#                print("Agua")
-#            break
-#    
-#def disparar_maquina(tablero_maquina,tablero_disparos_maquina):
-#    while marcador["maquina"] < PUNTUACION_MAXIMA:
-#        disparo_maquina = (random.randint(0, 9), random.randint(0, 9))
-#        print('disparo maquina', disparo_maquina)
-#        comprobar_maquina = comprobar_disparo(disparo_maquina, tablero_maquina)
-#        if comprobar_maquina:
-#            tablero_disparos_maquina[disparo_maquina] = "X"
-#            marcador["maquina"] += 1
-#            print("Tocado por maquina")
-#            print('disparos maquina', tablero_disparos_maquina)
-#        else:
-#            tablero_disparos_maquina[disparo_maquina] = "A"
-#            print("Agua maquina")
-#        break
+
